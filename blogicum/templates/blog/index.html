@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Лента записей{% endblock %}
+
+{% block content %}
+  <div class="container py-5">
+    <h1>Лента записей</h1>
+    <hr>
+    {% for posts in post %}
+      <article>
+        <ul>
+          <li>
+            Место: {{ posts.location }}
+          </li>
+          <li>
+            Дата: {{ posts.date }}
+          </li>
+          <li>
+            Категория: <a href="not-my-day">{{ posts.category }}</a>
+          </li>
+        </ul>
+        <p>
+          {{ posts.text|truncatewords:10 }}
+        </p>
+        <a href="{% url 'blog:post_detail' posts.id %}">Читать полный текст</a>
+        {% if not forloop.last %}
+          <hr>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -71,6 +71,7 @@ instance/
 # Sphinx documentation
 docs/_build/
 
+
 # PyBuilder
 target/
 
@@ -109,7 +110,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+html/
+tests/
 # Spyder project settings
 .spyderproject
 .spyproject
