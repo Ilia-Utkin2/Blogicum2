@@ -112,6 +112,7 @@ env.bak/
 venv.bak/
 html/
 tests/
+.tests
 # Spyder project settings
 .spyderproject
 .spyproject
