@@ -52,6 +52,7 @@ def post_detail(request, pk):
             return render(request, template, context)
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")
 
+
 def index(request):
     template = 'blog/index.html'
     context = {'post': reversed(posts)}
