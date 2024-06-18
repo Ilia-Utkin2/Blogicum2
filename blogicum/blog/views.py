@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
-# Create your views here.
+from django.http import HttpResponseNotFound
 posts = [
     {
         'id': 0,
@@ -47,9 +46,11 @@ posts = [
 
 def post_detail(request, pk):
     template = 'blog/detail.html'
-    context = {'post': posts[pk]}
-    return render(request, template, context)
-
+    for index in posts:
+        if index['id'] == pk:
+            context = {'post': index}
+            return render(request, template, context)
+    return HttpResponseNotFound("<h1>Страница не найдена</h1>")
 
 def index(request):
     template = 'blog/index.html'
