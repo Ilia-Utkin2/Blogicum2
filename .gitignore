@@ -112,7 +112,7 @@ env.bak/
 venv.bak/
 html/
 tests/
-static_dev/
+blogicum/static_dev/
 # Spyder project settings
 .spyderproject
 .spyproject
